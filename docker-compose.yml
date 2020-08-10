@@ -2,11 +2,11 @@ version: '3.4'
 services:
 
   eth1_node:
-    image: hyperledger/besu:latest
+    image: ethereum/client-go:stable
     entrypoint: []
     command: sh /scripts/start-eth1.sh
     volumes:
-      - ./besu:/opt/besu/data
+      - ./eth1_node:/root/.ethereum
       - ./scripts:/scripts
     ports:
       # Map the p2p port(30303)
