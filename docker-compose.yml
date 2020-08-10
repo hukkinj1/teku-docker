@@ -1,0 +1,30 @@
+version: '3.4'
+services:
+
+  eth1_node:
+    image: hyperledger/besu:latest
+    entrypoint: []
+    command: sh /scripts/start-eth1.sh
+    volumes:
+      - ./besu:/opt/besu/data
+      - ./scripts:/scripts
+    ports:
+      # Map the p2p port(30303)
+      - 30303:30303/tcp
+      - 30303:30303/udp
+    env_file: .env
+
+  teku_node:
+    image: pegasyseng/teku:develop
+    entrypoint: []
+    command: sh /scripts/start-teku.sh
+    volumes:
+      - ./teku:/opt/teku/data
+      - ./scripts:/scripts
+      - ./keys:/keys
+    ports:
+      # Map the p2p port(9000) and REST API port(5051)
+      - 9000:9000/tcp
+      - 9000:9000/udp
+      - 5051:5051/tcp
+    env_file: .env
