@@ -12,6 +12,7 @@ fi
 
 exec /opt/teku/bin/teku \
 	--network=medalla \
+	--log-destination=CONSOLE \
 	--data-path=/teku_data \
 	--rest-api-enabled=true \
 	--rest-api-docs-enabled=true \
