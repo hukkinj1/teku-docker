@@ -12,7 +12,7 @@ fi
 
 exec /opt/teku/bin/teku \
 	--network=medalla \
-	--data-path=/opt/teku/data \
+	--data-path=/teku_data \
 	--rest-api-enabled=true \
 	--rest-api-docs-enabled=true \
 	$GRAFFITI_PARAM \

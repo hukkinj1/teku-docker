@@ -15,11 +15,12 @@ services:
     env_file: .env
 
   teku_node:
-    image: pegasyseng/teku:develop
+    build:
+        context: teku_docker
     entrypoint: []
     command: sh /scripts/start-teku.sh
     volumes:
-      - ./teku:/opt/teku/data
+      - ./teku:/teku_data
       - ./scripts:/scripts
       - ./keys:/keys
     ports:
