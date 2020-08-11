@@ -6,7 +6,7 @@ services:
     entrypoint: []
     command: sh /scripts/start-eth1.sh
     volumes:
-      - ./eth1_node:/root/.ethereum
+      - ./eth1_data:/root/.ethereum
       - ./scripts:/scripts
     ports:
       # Map the p2p port(30303)
@@ -20,7 +20,7 @@ services:
     entrypoint: []
     command: sh /scripts/start-teku.sh
     volumes:
-      - ./teku:/teku_data
+      - ./teku_data:/teku_data
       - ./scripts:/scripts
       - ./keys:/keys
     ports:
