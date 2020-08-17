@@ -1,5 +1,5 @@
 .env
 keys/launchpad_validators.pass
 keys/keystore-m_*.json
-eth1_data/
-teku_data/
+data_eth1/
+data_teku/

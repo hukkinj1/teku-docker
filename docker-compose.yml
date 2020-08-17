@@ -6,7 +6,7 @@ services:
     entrypoint: []
     command: sh /scripts/start-eth1.sh
     volumes:
-      - ./eth1_data:/root/.ethereum
+      - ./data_eth1:/root/.ethereum
       - ./scripts:/scripts
     ports:
       # Map the p2p port(30303)
@@ -15,12 +15,12 @@ services:
     env_file: .env
 
   teku_node:
-    build:
-        context: teku_docker
+    image: pegasyseng/teku:develop
+    user: "${UID}" # This is needed to have read/write access to mounted volumes
     entrypoint: []
     command: sh /scripts/start-teku.sh
     volumes:
-      - ./teku_data:/teku_data
+      - ./data_teku:/data_teku
       - ./scripts:/scripts
       - ./keys:/keys
     ports:

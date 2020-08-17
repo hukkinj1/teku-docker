@@ -10,7 +10,7 @@
 1. Comment out `START_VALIDATOR=true` in the `.env` file.
 1. Start the containers:
    ```bash
-   docker-compose up -d
+   bash start.sh
    ```
 
 ### Run a Teku validator
@@ -25,5 +25,5 @@
 1. In the `.env` file, make `PASSWD_FILES` a comma separated list with the path `/keys/launchpad_validators.pass` listed as many times as there are validators.
 1. Start the containers:
    ```bash
-   docker-compose up -d
+   bash start.sh
    ```
